@@ -1,0 +1,17 @@
+inicia o yarn na raiz do projeto:
+ ~$ yarn init
+
+ inicia o controle de versão:
+ ~$ git init
+
+ instalar as dependencias do babel:
+ ~$ yarn add @babel/cli
+ ~$ yarn add @babel/preset-env 
+ ~$ yarn add @babel/core
+
+ cria arquivo de contiguração do babel: .babelrc
+{
+    "presets": ["@babel/preset-env"],
+}
+
+Criar scripts no package.Json

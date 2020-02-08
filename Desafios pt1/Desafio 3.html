@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div id="container"> 
+         </div><br>
+        <button id="ButtonAdc">Add Name</button>
+    </div>
+
+    <script>
+        var names = ["Diego", "Gabriel", "Lucas"];
+        var containerElement = document.querySelector('#container');
+
+        var listNames = document.createElement('ul');
+        names.forEach(addName)
+
+        containerElement.appendChild(listNames);
+        
+        function addName (name) {
+            var item = document.createElement('li');
+            var textName = document.createTextNode(name);
+            console.log(names);
+            item.appendChild( textName );
+
+            listNames.appendChild(item);
+        }
+        
+        
+
+
+        
+    </script>
+</body>
+</html>

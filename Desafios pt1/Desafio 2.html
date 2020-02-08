@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div id="container"> 
+         </div><br>
+        <button id="ButtonAdc">Adc Quadrado</button>
+    </div>
+
+    <script>
+        var buttonElement = document.querySelector("#ButtonAdc");
+        var containerElement = document.querySelector('#container');
+        
+        buttonElement.onclick = function() {
+            var newItem = document.createElement("div");
+            newItem.style.width = '100px';
+            newItem.style.height = '100px';
+            newItem.style.backgroundColor = "red";
+            newItem.style.margin = '5px';
+            newItem.style.border = 'solid';
+            newItem.style.display = 'inline-block';
+
+            console.log(newItem);
+
+            containerElement.appendChild(newItem);
+        };
+
+
+        containerElement.onmouseover = function() {
+            var squareElement = document.querySelectorAll('div#container div');
+            squareElement.forEach(setColor);
+        }
+
+        function setColor(item) {
+            item.onmouseover = function(){
+                item.style.backgroundColor = getRandomColor();
+            }
+        }
+
+        function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+        }
+    </script>
+</body>
+</html>
